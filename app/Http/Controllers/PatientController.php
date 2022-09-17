@@ -83,16 +83,11 @@ class PatientController extends Controller {
         $patient = Patient::find($id);
         //Update Patient info
         $requestedData = $request->all();
-        if (!empty($requestedData) && $requestedData['type'] === 'profile') {
+        
             foreach ($requestedData as $key => $val) {
-                if ($key === 'type') {
-                    continue;
-                }
                 $patient->{$key} = $val;
             }
-        } else {
-            
-        }
+        
         $patient->save();
         return response()->json([
                     'msg' => 'Patient data',
