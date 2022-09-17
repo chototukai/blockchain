@@ -56,7 +56,7 @@ class PatientController extends Controller {
 
         return response()->json([
                     'msg' => 'Patient data',
-                    'data' => 'File uploaded successfully',
+                    'data' => 'Patient file uploaded successfully',
                     'status' => true,
                     'hash' => $hashId,
                         ], 200);
